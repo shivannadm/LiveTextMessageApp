@@ -26,12 +26,34 @@
         </ImageView>
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            
+            android:layout_height="wrap_content"
+            android:text="@string/message"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            >
+
         </TextView>
+        <ProgressBar
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp">
+
+        </ProgressBar>
 
 
 
     </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/footer"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@color/gray"
+        android:layout_marginBottom="20dp">
+
+    </TextView>
 
 </RelativeLayout>
