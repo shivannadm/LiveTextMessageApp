@@ -1,4 +1,4 @@
-//MainActivity
+//MainActivity.java
 
 package com.android.myapplication;
 
