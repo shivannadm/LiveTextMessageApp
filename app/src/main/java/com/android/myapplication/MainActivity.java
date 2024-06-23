@@ -1,3 +1,4 @@
+//MainActivity
 package com.android.myapplication;
 
 import android.os.Bundle;
