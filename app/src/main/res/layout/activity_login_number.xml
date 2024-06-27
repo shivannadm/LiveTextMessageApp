@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".LoginNumberActivity">
 
     <LinearLayout
@@ -61,4 +62,37 @@
         </RelativeLayout>
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/phone_icon"
+        app:tint="@color/my_primary">
+
+    </ImageView>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter mobile number"
+        android:layout_gravity="center_vertical"
+        android:textSize="25sp">
+
+    </TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mibile Number"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_rounded_curve"
+            android:elevation="5dp">
+
+        </EditText>
+        
+    </LinearLayout>
+    
 </LinearLayout>
