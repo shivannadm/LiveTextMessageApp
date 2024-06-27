@@ -80,7 +80,18 @@
     </TextView>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        
+        <com.hbb20.CountryCodePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:ccp_showFlag="false"
+            app:ccp_showNameCode="false">
+
+        </com.hbb20.CountryCodePicker>
+        
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -93,6 +104,21 @@
 
         </EditText>
         
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send otp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_rounde_corner">
+
+        </Button>
+
     </LinearLayout>
     
 </LinearLayout>
