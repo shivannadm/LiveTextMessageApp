@@ -119,6 +119,14 @@
 
         </Button>
 
+        <ProgressBar
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/my_primary">
+
+        </ProgressBar>
+
     </LinearLayout>
     
 </LinearLayout>
