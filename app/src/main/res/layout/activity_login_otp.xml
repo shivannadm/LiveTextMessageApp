@@ -100,7 +100,8 @@
             android:padding="10dp"
             android:layout_margin="10dp"
             android:background="@drawable/edit_text_rounded_curve"
-            android:elevation="5dp">
+            android:elevation="5dp"
+            android:id="@+id/login_otp">
 
         </EditText>
 
@@ -116,7 +117,8 @@
             android:layout_height="wrap_content"
             android:text="NEXT"
             android:textColor="@color/white"
-            android:background="@drawable/btn_rounde_corner">
+            android:background="@drawable/btn_rounde_corner"
+            android:id="@+id/login_next_btn">
 
         </Button>
 
@@ -125,7 +127,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:indeterminateTint="@color/my_primary">
+            android:indeterminateTint="@color/my_primary"
+            android:id="@+id/login_progressbar">
 
         </ProgressBar>
 
@@ -135,7 +138,8 @@
         android:layout_height="wrap_content"
         android:text="Resend OTP in 30 sec"
         android:gravity="center"
-        android:textSize="15dp">
+        android:textSize="15dp"
+        android:id="@+id/resend_textview">
 
     </TextView>
 

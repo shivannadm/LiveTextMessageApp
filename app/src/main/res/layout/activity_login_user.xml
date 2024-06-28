@@ -98,7 +98,8 @@
             android:padding="10dp"
             android:layout_margin="10dp"
             android:background="@drawable/edit_text_rounded_curve"
-            android:elevation="5dp">
+            android:elevation="5dp"
+            android:id="@+id/login_username">
 
         </EditText>
 
@@ -114,7 +115,8 @@
             android:layout_height="wrap_content"
             android:text="Let me In"
             android:textColor="@color/white"
-            android:background="@drawable/btn_rounde_corner">
+            android:background="@drawable/btn_rounde_corner"
+            android:id="@+id/login_letme_in_btn">
 
         </Button>
 
@@ -123,7 +125,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:indeterminateTint="@color/my_primary">
+            android:indeterminateTint="@color/my_primary"
+            android:id="@+id/login_progressbar">
 
         </ProgressBar>
 

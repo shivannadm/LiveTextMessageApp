@@ -94,7 +94,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:ccp_showFlag="false"
-            app:ccp_showNameCode="false">
+            app:ccp_showNameCode="false"
+            android:id="@+id/login_countrycode">
 
         </com.hbb20.CountryCodePicker>
 
@@ -106,7 +107,8 @@
             android:padding="10dp"
             android:layout_margin="10dp"
             android:background="@drawable/edit_text_rounded_curve"
-            android:elevation="5dp">
+            android:elevation="5dp"
+            android:id="@+id/login_mobile_number">
 
         </EditText>
 
@@ -122,7 +124,8 @@
             android:layout_height="wrap_content"
             android:text="Send otp"
             android:textColor="@color/white"
-            android:background="@drawable/btn_rounde_corner">
+            android:background="@drawable/btn_rounde_corner"
+            android:id="@+id/send_otp_btn">
 
         </Button>
 
@@ -131,7 +134,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:indeterminateTint="@color/my_primary">
+            android:indeterminateTint="@color/my_primary"
+            android:id="@+id/login_progressbar">
 
         </ProgressBar>
 
