@@ -34,7 +34,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:background="@drawable/circular_bg"
-            android:backgroundTint="@color/my_primary"
+            android:backgroundTint="@color/gray"
             android:layout_margin="10dp">
             <TextView
                 android:layout_width="wrap_content"
@@ -50,7 +50,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:background="@drawable/circular_bg"
-            android:backgroundTint="@color/my_primary"
+            android:backgroundTint="@color/gray"
             android:layout_margin="10dp">
             <TextView
                 android:layout_width="wrap_content"
@@ -66,16 +66,20 @@
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
         android:src="@drawable/phone_icon"
         app:tint="@color/my_primary">
 
     </ImageView>
-    
+
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter mobile number"
-        android:layout_gravity="center_vertical"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center"
         android:textSize="25sp">
 
     </TextView>
@@ -83,8 +87,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_margin="10dp"
         android:gravity="center">
-        
+
         <com.hbb20.CountryCodePicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -92,7 +97,7 @@
             app:ccp_showNameCode="false">
 
         </com.hbb20.CountryCodePicker>
-        
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -104,12 +109,13 @@
             android:elevation="5dp">
 
         </EditText>
-        
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:gravity="center_vertical"
+        android:layout_margin="10dp"
         android:orientation="vertical">
         <Button
             android:layout_width="match_parent"
@@ -124,10 +130,11 @@
             android:layout_width="32dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="15dp"
             android:indeterminateTint="@color/my_primary">
 
         </ProgressBar>
 
     </LinearLayout>
-    
+
 </LinearLayout>
