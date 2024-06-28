@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:layout_margin="20dp"
-    tools:context=".LoginNumberActivity">
+    tools:context=".LoginUserActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -68,7 +68,7 @@
         android:layout_height="150dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:src="@drawable/phone_icon"
+        android:src="@drawable/person_icon"
         app:tint="@color/my_primary">
 
     </ImageView>
