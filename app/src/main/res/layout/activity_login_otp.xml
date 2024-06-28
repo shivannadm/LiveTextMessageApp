@@ -96,6 +96,7 @@
             android:layout_height="wrap_content"
             android:hint="OTP"
             android:inputType="number"
+            android:maxLength="6"
             android:padding="10dp"
             android:layout_margin="10dp"
             android:background="@drawable/edit_text_rounded_curve"
