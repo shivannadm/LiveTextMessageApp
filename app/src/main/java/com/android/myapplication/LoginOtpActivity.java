@@ -15,6 +15,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 import com.android.myapplication.utils.AndroidUtil;
@@ -35,7 +37,7 @@ import org.w3c.dom.Text;
 public class LoginOtpActivity extends AppCompatActivity {
 
     String phoneNumber;
-    Long timeoutSecond = 60L;
+    Long timeoutSecond = 30L;
     String verificationCode;
     PhoneAuthProvider.ForceResendingToken resendingToken;
     EditText otpInput;
@@ -63,7 +65,6 @@ public class LoginOtpActivity extends AppCompatActivity {
             String enterOtp = otpInput.getText().toString();
             PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationCode, enterOtp);
             signIn(credential);
-            setInProgress(true);
         });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -71,10 +72,14 @@ public class LoginOtpActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        resendOtpTextView.setOnClickListener((v)->{
+            sendOtp(phoneNumber,true);
+        });
     }
 
     void sendOtp(String phoneNumber, boolean isResend){
-
+        startResendTime();
         setInProgress(true);
         PhoneAuthOptions.Builder builder = PhoneAuthOptions.newBuilder(mAuth)
                 .setPhoneNumber(phoneNumber)
@@ -141,4 +146,22 @@ public class LoginOtpActivity extends AppCompatActivity {
         });
     }
 
+    void startResendTime(){
+        resendOtpTextView.setEnabled(false);
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                timeoutSecond--;
+                resendOtpTextView.setText("Resend OTP "+timeoutSecond+"seconds");
+                if(timeoutSecond <= 0){
+                    timeoutSecond = 30L;
+                    timer.cancel();
+                    runOnUiThread(() -> {
+                        resendOtpTextView.setEnabled(true);
+                    });
+                }
+            }
+        },0,1000);
+    }
 }
