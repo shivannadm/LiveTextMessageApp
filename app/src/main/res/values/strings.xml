@@ -3,4 +3,5 @@
     <string name="button">Button</string>
     <string name="message">Connecting Server...</string>
     <string name="footer">Live Text Messaging App</string>
+    <string name="mibile_number">Mibile Number</string>
 </resources>

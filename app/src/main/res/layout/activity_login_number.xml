@@ -96,16 +96,17 @@
             app:ccp_showFlag="false"
             app:ccp_showNameCode="false"
             android:id="@+id/login_countrycode">
-
         </com.hbb20.CountryCodePicker>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Mibile Number"
+            android:hint="@string/mibile_number"
             android:inputType="phone"
             android:padding="10dp"
             android:layout_margin="10dp"
+            android:minHeight="48dp"
+            android:minWidth="48dp"
             android:background="@drawable/edit_text_rounded_curve"
             android:elevation="5dp"
             android:id="@+id/login_mobile_number">

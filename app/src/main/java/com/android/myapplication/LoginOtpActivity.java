@@ -9,6 +9,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.HashMap;
+import java.util.Map;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+
 public class LoginOtpActivity extends AppCompatActivity {
 
     String phoneNumber;
@@ -20,6 +25,10 @@ public class LoginOtpActivity extends AppCompatActivity {
 
         phoneNumber = getIntent().getExtras().getString("phone");
         Toast.makeText(getApplicationContext(),phoneNumber,Toast.LENGTH_LONG).show();
+
+        Map<String, String> data = new HashMap<>();
+        FirebaseFirestore.getInstance().collection("test").add(data);
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
