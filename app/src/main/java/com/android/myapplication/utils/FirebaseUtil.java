@@ -28,9 +28,9 @@ public class FirebaseUtil {
         return FirebaseFirestore.getInstance().collection("users").document(currentUserId());
     }
 
-//    public static CollectionReference allUserCollectionReference(){
-//        return FirebaseFirestore.getInstance().collection("users");
-//    }
+    public static CollectionReference allUserCollectionReference(){
+        return FirebaseFirestore.getInstance().collection("users");
+    }
 //
 //    public static DocumentReference getChatroomReference(String chatroomId){
 //        return FirebaseFirestore.getInstance().collection("chatrooms").document(chatroomId);

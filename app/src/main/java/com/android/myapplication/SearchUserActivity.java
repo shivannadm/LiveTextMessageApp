@@ -1,6 +1,7 @@
 package com.android.myapplication;
 //
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 //import androidx.recyclerview.widget.LinearLayoutManager;
 //import androidx.recyclerview.widget.RecyclerView;
@@ -10,20 +11,26 @@ import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageButton;
 //
-//import com.android.myapplication.adapter.SearchUserRecyclerAdapter;
+import com.android.myapplication.adapter.SearchUserRecyclerAdapter;
+import com.android.myapplication.model.UserModel;
+import com.android.myapplication.utils.FirebaseUtil;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.Query;
+
 //import com.android.myapplication.model.UserModel;
 //import com.android.myapplication.utils.FirebaseUtil;
 //import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 //import com.google.firebase.firestore.Query;
 //
 public class SearchUserActivity extends AppCompatActivity {
-//
+    //
     EditText searchInput;
     ImageButton searchButton;
     ImageButton backButton;
     RecyclerView recyclerView;
-//
-//    SearchUserRecyclerAdapter adapter;
+
+    //
+    SearchUserRecyclerAdapter adapter;
 //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,49 +57,51 @@ public class SearchUserActivity extends AppCompatActivity {
             setupSearchRecyclerView(searchTerm);
         });
     }
-//
+
+    //
     void setupSearchRecyclerView(String searchTerm) {
-//        Query query = FirebaseUtil.allUserCollectionReference()
-//                .whereGreaterThanOrEqualTo("username", searchTerm)
-//                .whereLessThanOrEqualTo("username", searchTerm + '\uf8ff');
+        Query query = FirebaseUtil.allUserCollectionReference()
+                .whereGreaterThanOrEqualTo("username", searchTerm);
 //
-//        FirestoreRecyclerOptions<UserModel> options = new FirestoreRecyclerOptions.Builder<UserModel>()
-//                .setQuery(query, UserModel.class)
-//                .build();
+        FirestoreRecyclerOptions<UserModel> options = new FirestoreRecyclerOptions.Builder<UserModel>()
+                .setQuery(query, UserModel.class)
+                .build();
 //
 //        if (adapter != null) {
 //            adapter.stopListening();
 //        }
 //
-//        adapter = new SearchUserRecyclerAdapter(options, getApplicationContext());
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        recyclerView.setAdapter(adapter);
-//        adapter.startListening();
+        adapter = new SearchUserRecyclerAdapter(options, getApplicationContext());
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+        adapter.startListening();
 //
 //        Log.d("SearchUserActivity", "Query setup with search term: " + searchTerm);
     }
-//
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        if (adapter != null) {
-//            adapter.startListening();
-//        }
-//    }
-//
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        if (adapter != null) {
-//            adapter.stopListening();
-//        }
-//    }
-//
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        if (adapter != null) {
-//            adapter.startListening();
-//        }
 
+    //
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (adapter != null) {
+            adapter.startListening();
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (adapter != null) {
+            adapter.stopListening();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (adapter != null) {
+            adapter.startListening();
+        }
+
+    }
 }
