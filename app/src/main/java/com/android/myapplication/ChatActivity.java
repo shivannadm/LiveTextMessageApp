@@ -1,18 +1,28 @@
-//package com.android.myapplication;
+package com.android.myapplication;
+
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.android.myapplication.model.UserModel;
+import com.android.myapplication.utils.AndroidUtil;
+import com.android.myapplication.utils.FirebaseUtil;
+
 //
 //import androidx.annotation.NonNull;
 //import androidx.appcompat.app.AppCompatActivity;
 //import androidx.recyclerview.widget.LinearLayoutManager;
 //import androidx.recyclerview.widget.RecyclerView;
 //
-//import android.net.Uri;
-//import android.os.Bundle;
-//import android.util.Log;
-//import android.widget.EditText;
-//import android.widget.ImageButton;
-//import android.widget.ImageView;
-//import android.widget.TextView;
-//
+import android.net.Uri;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 //import com.android.myapplication.adapter.ChatRecyclerAdapter;
 //import com.android.myapplication.adapter.ChatRecyclerAdapter;
 //import com.android.myapplication.adapter.SearchUserRecyclerAdapter;
@@ -44,36 +54,37 @@
 //import okhttp3.RequestBody;
 //import okhttp3.Response;
 //
-//public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity {
 //
 //    UserModel otherUser;
-//    String chatroomId;
+    UserModel otherUser;
+    String chatroomId;
 //    ChatroomModel chatroomModel;
 //    ChatRecyclerAdapter adapter;
 //
-//    EditText messageInput;
-//    ImageButton sendMessageBtn;
-//    ImageButton backBtn;
-//    TextView otherUsername;
-//    RecyclerView recyclerView;
-//    ImageView imageView;
+    EditText messageInput;
+    ImageButton sendMessageBtn;
+    ImageButton backBtn;
+    TextView otherUsername;
+    RecyclerView recyclerView;
+    ImageView imageView;
 //
 //
 //    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_chat);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_chat);
 //
-//        //get UserModel
-//        otherUser = AndroidUtil.getUserModelFromIntent(getIntent());
+        //get UserModel
+        otherUser = AndroidUtil.getUserModelFromIntent(getIntent());
 //        chatroomId = FirebaseUtil.getChatroomId(FirebaseUtil.currentUserId(),otherUser.getUserId());
 //
-//        messageInput = findViewById(R.id.chat_message_input);
-//        sendMessageBtn = findViewById(R.id.message_send_btn);
-//        backBtn = findViewById(R.id.back_btn);
-//        otherUsername = findViewById(R.id.other_username);
-//        recyclerView = findViewById(R.id.chat_recycler_view);
-//        imageView = findViewById(R.id.profile_pic_image_view);
+        messageInput = findViewById(R.id.chat_message_input);
+        sendMessageBtn = findViewById(R.id.message_send_btn);
+        backBtn = findViewById(R.id.back_btn);
+        otherUsername = findViewById(R.id.other_username);
+        recyclerView = findViewById(R.id.chat_recycler_view);
+        imageView = findViewById(R.id.profile_pic_image_view);
 //
 //        FirebaseUtil.getOtherProfilePicStorageRef(otherUser.getUserId()).getDownloadUrl()
 //                .addOnCompleteListener(t -> {
@@ -83,10 +94,10 @@
 //                    }
 //                });
 //
-//        backBtn.setOnClickListener((v)->{
-//            onBackPressed();
-//        });
-//        otherUsername.setText(otherUser.getUsername());
+        backBtn.setOnClickListener((v)->{
+            onBackPressed();
+        });
+        otherUsername.setText(otherUser.getUsername());
 //
 //        sendMessageBtn.setOnClickListener((v -> {
 //            String message = messageInput.getText().toString().trim();
@@ -302,5 +313,5 @@
 ////                }
 ////            }
 ////        });
-////    }
-////}
+    }
+}
