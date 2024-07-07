@@ -17,7 +17,7 @@
         <ImageView
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:src="@drawable/text_icon"
+            android:src="@drawable/chat_icon"
             app:tint="@color/white">
 
             

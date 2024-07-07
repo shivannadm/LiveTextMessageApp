@@ -119,13 +119,13 @@ public class LoginOtpActivity extends AppCompatActivity {
     }
 
     void setInProgress(boolean inProgress){
-    if(inProgress){
-        progressBar.setVisibility(View.VISIBLE);
-        nextBtn.setVisibility(View.GONE);
-    }else{
-        progressBar.setVisibility(View.GONE);
-        nextBtn.setVisibility(View.VISIBLE);
-    }
+        if(inProgress){
+            progressBar.setVisibility(View.VISIBLE);
+            nextBtn.setVisibility(View.GONE);
+        }else{
+            progressBar.setVisibility(View.GONE);
+            nextBtn.setVisibility(View.VISIBLE);
+        }
     }
 
     void signIn(PhoneAuthCredential phoneAuthCredential){

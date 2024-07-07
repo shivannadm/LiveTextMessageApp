@@ -4,4 +4,6 @@
     <string name="message">Connecting Server...</string>
     <string name="footer">Live Text Messaging App</string>
     <string name="mibile_number">Mibile Number</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
