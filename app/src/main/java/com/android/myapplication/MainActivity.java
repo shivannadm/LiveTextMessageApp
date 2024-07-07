@@ -2,6 +2,7 @@
 
 package com.android.myapplication;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -61,5 +62,13 @@ public class MainActivity extends AppCompatActivity {
         });
         bottomNavigationView.setSelectedItemId(R.id.menu_chat);
 
+    }
+
+    public class MyApplication extends Application {
+        @Override
+        public void onCreate() {
+            super.onCreate();
+            FirebaseApp.initializeApp(this);
+        }
     }
 }
