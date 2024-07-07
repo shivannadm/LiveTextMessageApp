@@ -1,6 +1,6 @@
-//package com.android.myapplication;
+package com.android.myapplication;
 //
-//import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 //import androidx.recyclerview.widget.LinearLayoutManager;
 //import androidx.recyclerview.widget.RecyclerView;
 //
@@ -15,7 +15,7 @@
 //import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 //import com.google.firebase.firestore.Query;
 //
-//public class SearchUserActivity extends AppCompatActivity {
+public class SearchUserActivity extends AppCompatActivity {
 //
 //    EditText searchInput;
 //    ImageButton searchButton;
@@ -94,4 +94,4 @@
 //            adapter.startListening();
 //        }
 //    }
-//}
+}
