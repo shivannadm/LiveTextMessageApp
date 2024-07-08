@@ -1,92 +1,51 @@
 package com.android.myapplication;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.android.myapplication.adapter.ChatRecyclerAdapter;
 import com.android.myapplication.model.ChatMessageModel;
 import com.android.myapplication.model.UserModel;
 import com.android.myapplication.utils.AndroidUtil;
 import com.android.myapplication.utils.FirebaseUtil;
-
-
-
-//
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.net.Uri;
-import android.os.Bundle;
-import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-//import com.android.myapplication.adapter.ChatRecyclerAdapter;
-//import com.android.myapplication.adapter.ChatRecyclerAdapter;
-//import com.android.myapplication.adapter.SearchUserRecyclerAdapter;
-//import com.android.myapplication.model.ChatMessageModel;
 import com.android.myapplication.model.ChatroomModel;
-import com.android.myapplication.model.UserModel;
-import com.android.myapplication.utils.AndroidUtil;
-import com.android.myapplication.utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.Query;
-//
-//import org.checkerframework.checker.units.qual.c;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.sql.Time;
 import java.util.Arrays;
-//
-//import okhttp3.Call;
-//import okhttp3.Callback;
-//import okhttp3.MediaType;
-//import okhttp3.OkHttpClient;
-//import okhttp3.Request;
-//import okhttp3.RequestBody;
-//import okhttp3.Response;
 
 public class ChatActivity extends AppCompatActivity {
-//
-//    UserModel otherUser;
+
     UserModel otherUser;
     String chatroomId;
     ChatroomModel chatroomModel;
     ChatRecyclerAdapter adapter;
-//
+
     EditText messageInput;
     ImageButton sendMessageBtn;
     ImageButton backBtn;
     TextView otherUsername;
     RecyclerView recyclerView;
     ImageView imageView;
-//
-//
-//    @Override
+
+   @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-//
+
         //get UserModel
         otherUser = AndroidUtil.getUserModelFromIntent(getIntent());
         chatroomId = FirebaseUtil.getChatroomId(FirebaseUtil.currentUserId(),otherUser.getUserId());
-//
+
         messageInput = findViewById(R.id.chat_message_input);
         sendMessageBtn = findViewById(R.id.message_send_btn);
         backBtn = findViewById(R.id.back_btn);
@@ -106,18 +65,18 @@ public class ChatActivity extends AppCompatActivity {
             onBackPressed();
         });
         otherUsername.setText(otherUser.getUsername());
-//
+
         sendMessageBtn.setOnClickListener((v -> {
             String message = messageInput.getText().toString().trim();
             if(message.isEmpty())
                 return;
             sendMessageToUser(message);
         }));
-//
+
         getOrCreateChatroomModel();
         setupChatRecyclerView();
     }
-//
+
     void setupChatRecyclerView(){
         Query query = FirebaseUtil.getChatroomMessageReference(chatroomId)
                 .orderBy("timestamp", Query.Direction.DESCENDING);
@@ -139,7 +98,7 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
     }
-//
+
     void sendMessageToUser(String message){
 
         chatroomModel.setLastMessageTimestamp(Timestamp.now());
@@ -159,7 +118,7 @@ public class ChatActivity extends AppCompatActivity {
                     }
                 });
     }
-//
+
     void getOrCreateChatroomModel(){
         FirebaseUtil.getChatroomReference(chatroomId).get().addOnCompleteListener(task -> {
             if(task.isSuccessful()){
