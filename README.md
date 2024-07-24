@@ -1,2 +1,2 @@
  # #Live Text Message App
- updating..
+ Updating...
