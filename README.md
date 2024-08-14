@@ -1,6 +1,5 @@
  # #Live Text Message App
- Updating...
-## The app enables users to do messages accordingly 
+# Progress... 
 <html>
  <head>
   
