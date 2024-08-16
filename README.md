@@ -1,5 +1,4 @@
- # #Live Text Message App
-# Progress... 
+ # Live Text Message App
 <html>
  <head>
   
@@ -7,6 +6,7 @@
 <body>
  <h1>Improveing</h1>
  <ul>
+  <li>Login Authentication</li>
   <li>Messaging</li>
   <li>Profile Building</li>
   <li>Chat Recycling</li>
