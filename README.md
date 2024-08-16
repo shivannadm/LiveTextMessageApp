@@ -2,16 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        .id1 {
-            background-color: gray;
-        }
-    </style>
+   
 </head>
 <body>
-    <div class="id1">
-        This div has a gray background!
-    </div>
+   <h2>Project Specifications</h2>
+ <ul>
+  <li>Login OTP Authentication</li>
+  <li>messaging</li>
+  <li>Profile Building</li>
+  <li>Chat Recycler</li>
+ </ul>
 </body>
 </html>
 
