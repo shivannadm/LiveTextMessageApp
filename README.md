@@ -15,6 +15,7 @@
  <h2>Criteria For running Code</h2>
  <li>Android Studio IDE</li>
  <li>FireBase Server</li>
+ <li>Firebase FireStudio</li>
 </body>
 </html>
 
