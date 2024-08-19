@@ -12,6 +12,8 @@
   <li>Profile Building</li>
   <li>Chat Recycler</li>
  </ul>
+ <h2>Criteria For running Code</h2>
+ <li>Android Studio IDE</li>
 </body>
 </html>
 
