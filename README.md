@@ -18,7 +18,6 @@
   <li>JAVA & JDK</li>
  <li>FireBase Server</li>
  <li>Firebase FireStudio</li>
-
  </ul>
 </body>
 </html>
