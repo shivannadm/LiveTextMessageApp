@@ -20,6 +20,5 @@
   <li>FireBase Server</li>
   <li>Firebase FireStudio</li>
  </ul>
- <h2>How to run</h2>
 </body>
 </html>
