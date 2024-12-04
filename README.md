@@ -1,5 +1,5 @@
 # LiveTextMessageApp
-# Overview 
+## Overview 
 The LiveTextMessageApp is a robust text messaging platform developed using Android Studio and Java, with Firebase powering its backend. It enables real-time messaging, secure data storage, and user authentication. Designed for seamless communication, it incorporates intuitive UI/UX, ensuring reliable, efficient, and user-friendly interactions for modern mobile users.
 
 ## Activity Files
